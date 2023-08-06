@@ -1,0 +1,48 @@
+export default {
+  'POST /api/reqDemo': (res) => {
+    res.status(200).send({
+      success: true,
+      data:{qb:[{
+        id:11,
+        quest:'1+1=?',
+        a:'1',
+        b:'2',
+        c:'3',
+        d:'4',
+        answer:'B'
+      },{
+        id:22,
+        quest:'1+2=?',
+        a:'1',
+        b:'2',
+        c:'3',
+        d:'4',
+        answer:'C'
+      },{
+        id:33,
+        quest:'1+3=?',
+        a:'1',
+        b:'2',
+        c:'3',
+        d:'4',
+        answer:'D'
+      },{
+        id:44,
+        quest:'1+4=?',
+        a:'5',
+        b:'2',
+        c:'3',
+        d:'4',
+        answer:'A'
+      },{
+        id:55,
+        quest:'1+5=?',
+        a:'1',
+        b:'2',
+        c:'6',
+        d:'4',
+        answer:'C'
+      }],}
+    });
+  },
+};
