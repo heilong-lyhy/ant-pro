@@ -1,5 +1,5 @@
 export default {
-  'POST /api/reqDemo': (res) => {
+  'POST /api/reqDemo': (req,res) => {
     res.status(200).send({
       success: true,
       data:{qb:[{

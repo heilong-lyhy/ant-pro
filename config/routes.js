@@ -30,6 +30,13 @@ export default [
     icon: 'smile',
     component: './Reqdemo',
   },
+  {
+    path: '/Signup',
+    name: '注册',
+    icon: 'smile',
+    component: './Signup',
+  },
+
   { 
     path: '/admin',
     name: 'admin',
