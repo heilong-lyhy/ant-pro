@@ -31,10 +31,10 @@ export default [
     component: './Reqdemo',
   },
   {
-    path: '/Signup',
-    name: '注册',
+    path: '/Signin',
+    name: '登录-注册',
     icon: 'smile',
-    component: './Signup',
+    component: './Signin',
   },
 
   { 

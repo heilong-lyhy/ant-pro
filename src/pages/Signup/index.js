@@ -4,23 +4,8 @@ import { Button, Input } from 'antd';
 import { useImmer } from 'use-immer';
 import { useState } from 'react';
 import Signover from '../Signover';
-function Signup(){
+function Signup({user,handleusernamechange,handlepasswordchange,back}){
   const [torf,settorf] = useState(0)
-  const [user,updateUser] = useImmer({
-    username:null,
-    password:null
-  });
-  function handleusernamechange(e){
-    updateUser(draft => {
-      draft.username = e.target.value
-    })
-    // console.log(e.target.value)
-  }
-  function handlepasswordchange(e){
-    updateUser(draft => {
-      draft.password = e.target.value
-    })
-  }
   function Click(){
     if(torf<2){
       settorf(torf+1)
@@ -55,7 +40,7 @@ function Signup(){
       return(
         <>
           <Signover data={user}/>
-          <Button type="primary" onClick={Click}>返回</Button>
+          <Button type="primary" onClick={back}>返回</Button>
         </>
       )
     }
