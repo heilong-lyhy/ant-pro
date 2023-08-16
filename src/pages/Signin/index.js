@@ -5,8 +5,8 @@ import { useImmer } from 'use-immer';
 import { Button, Input } from 'antd';
 function Signin(){
   const [inorup,setinorup] = useState(false)
-  const [userlist,setuserlist] = useState(null)
-  // const [userlist,updatauserlist] = useImmer([])
+  // const [userlist,setuserlist] = useState(null)
+  const [userlist,updatauserlist] = useImmer([])
   const [user,updateUser] = useImmer({
     username:null,
     password:null
@@ -40,18 +40,17 @@ function Signin(){
   }
   function back(){
     setinorup(!inorup)
-    setuserlist(user)
-    // updatauserlist(draft => {
-    //   draft.push(user)
-    // })
+    // setuserlist(user)
+    updatauserlist(draft => {
+      draft.push(user)
+    })
   }
   function log(){
-    // const result = userlist.filter(nameandword => nameandword == loginuser)
-    if(user.username == loginuser.username && user.password == loginuser.password){
+    const result = userlist.filter(nameandword => nameandword.username == loginuser.username && nameandword.password == loginuser.password)
+    if(result[0]!=undefined){
       alert('登录成功')
     }else{
       alert('登录失败')
-      console.log(user)
     }
   }
   function page(){
