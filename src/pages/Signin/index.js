@@ -3,8 +3,11 @@ import Loging from '../Loging';
 import Signup from '../Signup';
 import { useImmer } from 'use-immer';
 import { Button, Input } from 'antd';
+import Reqdemo from '../Reqdemo';
+import { set } from 'lodash';
 function Signin(){
   const [inorup,setinorup] = useState(false)
+  const [islog,setislog] = useState(false)
   // const [userlist,setuserlist] = useState(null)
   const [userlist,updatauserlist] = useImmer([])
   const [user,updateUser] = useImmer({
@@ -49,15 +52,23 @@ function Signin(){
     const result = userlist.filter(nameandword => nameandword.username == loginuser.username && nameandword.password == loginuser.password)
     if(result[0]!=undefined){
       alert('登录成功')
+      setislog(true)
     }else{
       alert('登录失败')
     }
   }
-  function page(){
+  function signing(){
     if(inorup){
-      return <Signup user={user} handleusernamechange={handleusernamechange} handlepasswordchange={handlepasswordchange} back={back}></Signup>
+      return <Signup user={user} handleusernamechange={handleusernamechange} handlepasswordchange={handlepasswordchange} back={back} />
     }else{
-      return <Loging loginuser={loginuser} Click={Click} login={log} handleusernamechange={handleloginusernamechange} handlepasswordchange={handleloginpasswordchange}></Loging>
+      return <Loging loginuser={loginuser} Click={Click} login={log} handleusernamechange={handleloginusernamechange} handlepasswordchange={handleloginpasswordchange} />
+    }
+  }
+  function page(){
+    if(islog){
+      return <Reqdemo />
+    }else{
+      return(signing()) 
     }
   }
   return(
