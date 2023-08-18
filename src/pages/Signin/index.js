@@ -8,7 +8,6 @@ import { set } from 'lodash';
 function Signin(){
   const [inorup,setinorup] = useState(false)
   const [islog,setislog] = useState(false)
-  // const [userlist,setuserlist] = useState(null)
   const [userlist,updatauserlist] = useImmer([])
   const [user,updateUser] = useImmer({
     username:null,
@@ -43,7 +42,6 @@ function Signin(){
   }
   function back(){
     setinorup(!inorup)
-    // setuserlist(user)
     updatauserlist(draft => {
       draft.push(user)
     })

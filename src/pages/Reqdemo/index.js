@@ -9,14 +9,11 @@ function Reqdemo(){
       const data = {};
       const ava = await reqDemo({ ...data })
       if(ava.success){
-        // console.log(ava.data.qb)
         setts(ava.data.qb)
       }
     } catch (error) {
       message.error('error');
     }
-    // return <Choose qb={ava.data}/>
-    
   };
   return(
     <>

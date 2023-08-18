@@ -12,7 +12,6 @@ function Signup({user,handleusernamechange,handlepasswordchange,back}){
     }else{
       settorf(0)
     }
-    // console.log(torf)
   }
   function up(){
     if(torf===0){
@@ -22,7 +21,6 @@ function Signup({user,handleusernamechange,handlepasswordchange,back}){
           <Button type="primary" onClick={Click}>下一步</Button>
         </>
       )
-      // return <h1>test</h1>
     }else if(torf===1){
       return(
         <>
