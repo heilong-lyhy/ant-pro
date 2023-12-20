@@ -9,7 +9,8 @@ function Choose({qba}){
     function handleClick(){
       settorf(!torf)
     }
-    const question =question_bank.map(qb => <Ctemplate question={qb} torf={torf} a={thao = thao+1} key={qb.id}/>)
+    const question =question_bank.map(qb => 
+    <Ctemplate question={qb} torf={torf} a={thao = thao+1} key={qb.id}/>)
     return(
       <>
       {question}
