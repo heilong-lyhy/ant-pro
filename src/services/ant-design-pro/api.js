@@ -81,3 +81,13 @@ export async function reqDemo(body) {
     data: body,
   });
 }
+
+export async function nChoose(body) {
+  return request('http://localhost:2317/user', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+  });
+}
