@@ -36,6 +36,12 @@ export default [
     icon: 'smile',
     component: './Signin',
   },
+  {
+    path: '/Newchoose/Nchoose',
+    name: '新选择',
+    icon: 'smile',
+    component: './Newchoose/Nchoose',
+  },
 
   { 
     path: '/admin',
