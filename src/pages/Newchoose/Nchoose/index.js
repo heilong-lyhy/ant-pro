@@ -1,26 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button } from 'antd';
-import axios from 'axios';
-import { nChoose } from '@/services/ant-design-pro/api';
+import Ncbody from '../Ncbody';
 
-function Nchoose(){
-  const Click = async () => {
-    try {
-      const data = {};
-      const ava = await nChoose({ ...data })
-      if(ava.status){
-        console.log(ava.data.msg[0].cquestion)
-      }
-    } catch (error) {
-      console.log(error)
+
+
+function Nchoose({qba}){
+  const [torf,settorf] = useState(false)
+  if(qba){
+    const question_bank = qba
+    let thao = 0
+    function handleClick(){
+      settorf(!torf)
     }
-  };
-  
-  return(
-    <>
-      <Button type="primary" onClick={Click}>点我获取题目</Button> 
-    </>
-  )
+    const question =question_bank.map(qb => 
+    <Ncbody question={qb} torf={torf} a={thao = thao+1} key={qb.id}/>)
+    return(
+      <>
+      {question}
+      <Button type="primary" onClick={handleClick}>点击查看答案</Button>
+      </>
+    )
+  }else{
+    return null
+  }
 }
-
+  
 export default Nchoose;

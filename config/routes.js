@@ -37,10 +37,10 @@ export default [
     component: './Signin',
   },
   {
-    path: '/Newchoose/Nchoose',
+    path: '/Newchoose/Nhome',
     name: '新选择',
     icon: 'smile',
-    component: './Newchoose/Nchoose',
+    component: './Newchoose/Nhome',
   },
 
   { 
