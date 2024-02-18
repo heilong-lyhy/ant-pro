@@ -9,7 +9,7 @@ function Nchoose(){
       const data = {};
       const ava = await nChoose({ ...data })
       if(ava.status){
-        console.log(ava.data.msg)
+        console.log(ava.data.msg[0].cquestion)
       }
     } catch (error) {
       console.log(error)
